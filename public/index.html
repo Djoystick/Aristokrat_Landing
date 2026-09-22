@@ -51,7 +51,7 @@
   </script>
 
   <!-- Custom Stylesheet -->
-  <link rel="stylesheet" href="/css/style.css?v=1.0.1">
+  <link rel="stylesheet" href="/css/style.css?v=1.1.0">
 </head>
 <body class="bg-[#09090b] text-[#fafafa] relative selection:bg-amber-500 selection:text-black">
 
@@ -73,7 +73,7 @@
       <!-- Desktop Navigation (Logical Narrative Sequence) -->
       <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-zinc-300">
         <a href="#about" class="hover:text-amber-300 transition-colors">О студии</a>
-        <a href="#director" class="hover:text-amber-300 transition-colors">Режиссер</a>
+        <a href="#team" class="hover:text-amber-300 transition-colors">Педагоги</a>
         <a href="#courses" class="hover:text-amber-300 transition-colors">Направления</a>
         <a href="#plays" class="hover:text-amber-300 transition-colors">Репертуар</a>
         <a href="#gallery" class="hover:text-amber-300 transition-colors">Галерея</a>
@@ -260,69 +260,173 @@
     </div>
   </section>
 
-  <!-- ==================== 3. МАСТЕРСКАЯ РЕЖИССЕРА ==================== -->
-  <section id="director" class="py-24 relative border-t border-white/5 bg-[#09090b]/40">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+  <!-- ==================== 3. ПЕДАГОГИ И РЕЖИССЕРЫ СТУДИИ ==================== -->
+  <section id="team" class="py-24 relative border-t border-white/5 bg-[#09090b]/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="glass-panel p-8 sm:p-14 rounded-3xl relative overflow-hidden">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-          
-          <!-- Photo -->
-          <div class="lg:col-span-5">
-            <div class="relative rounded-2xl overflow-hidden aspect-[4/5] border border-amber-500/20 shadow-[0_0_30px_rgba(245,158,11,0.15)]">
-              <img 
-                src="/images/covers/director-setkov.jpg" 
-                alt="Евгений Игоревич Сетьков — Художественный руководитель и режиссер" 
-                class="w-full h-full object-cover"
-              />
-              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-              <div class="absolute bottom-4 left-4 right-4">
-                <span class="text-xs uppercase tracking-wider text-amber-400 font-semibold">Режиссер и наставник</span>
-                <h3 class="font-serif text-2xl font-bold text-white">Евгений Игоревич Сетьков</h3>
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="badge-stage mb-3">Команда наставников</span>
+        <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mb-4">
+          Педагоги и режиссеры студии
+        </h2>
+        <p class="text-zinc-400 text-sm sm:text-base">
+          Опытные актеры и театральные деятели, готовые делиться знаниями, практикой живой сцены и вести каждого ученика от первых шагов до премьерных аплодисментов.
+        </p>
+      </div>
+
+      <!-- 2 Major Director & Mentor Cards -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+        
+        <!-- Mentor 1: Евгений Игоревич Сетьков -->
+        <div class="glass-panel p-8 sm:p-10 rounded-3xl relative overflow-hidden flex flex-col justify-between group hover:border-amber-500/30 transition-all duration-300">
+          <div>
+            <div class="flex flex-col sm:flex-row gap-6 items-center sm:items-start mb-6">
+              <div class="relative w-36 h-44 sm:w-40 sm:h-48 rounded-2xl overflow-hidden shrink-0 border border-amber-500/20 shadow-[0_0_20px_rgba(245,158,11,0.15)]">
+                <img 
+                  src="/images/covers/director-setkov.jpg" 
+                  alt="Евгений Игоревич Сетьков — педагог и режиссер" 
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                <span class="absolute bottom-2.5 left-2.5 right-2.5 text-[10px] uppercase font-semibold text-amber-300 tracking-wider text-center">
+                  Взрослая труппа 18+
+                </span>
+              </div>
+              <div class="text-center sm:text-left flex-1">
+                <span class="inline-block px-3 py-1 rounded-full text-[11px] font-semibold bg-amber-400/10 text-amber-300 border border-amber-400/20 mb-2">
+                  Режиссер спектакля «Очень простая история»
+                </span>
+                <h3 class="font-serif text-2xl sm:text-3xl font-bold text-white mb-1">
+                  Евгений Игоревич Сетьков
+                </h3>
+                <p class="text-xs text-zinc-400 mb-4 font-medium">
+                  Педагог актерского мастерства & Режиссер-постановщик
+                </p>
+                <blockquote class="text-zinc-300 text-xs sm:text-sm italic leading-relaxed border-l-2 border-amber-500 pl-3">
+                  «Театр — это не просто выученные реплики. Это смелость быть настоящим, слышать партнера и открывать в себе живые чувства.»
+                </blockquote>
+              </div>
+            </div>
+
+            <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed mb-6">
+              Ведет актерское мастерство для взрослой группы 18+, осуществляет постановку глубоких драматических спектаклей (4 аншлага подряд на премьере «Очень простой истории»). Помогает снять внутренние зажимы, страх публичности и раскрыть творческую индивидуальность.
+            </p>
+
+            <div class="grid grid-cols-2 gap-2 text-xs text-zinc-300 mb-6">
+              <div class="flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-amber-400 shrink-0"></span>
+                <span>Аншлаговые спектакли</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-amber-400 shrink-0"></span>
+                <span>Снятие телесных зажимов</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-amber-400 shrink-0"></span>
+                <span>Драматический разбор роли</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-amber-400 shrink-0"></span>
+                <span>Подготовка к монологам</span>
               </div>
             </div>
           </div>
 
-          <!-- Bio & Quote -->
-          <div class="lg:col-span-7 flex flex-col justify-between">
-            <div>
-              <span class="badge-stage mb-4">Художественное руководство</span>
-              <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mb-6">
-                «Театр — это смелость быть настоящим»
-              </h2>
-
-              <blockquote class="text-zinc-300 text-base sm:text-lg leading-relaxed italic mb-8 border-l-2 border-amber-500 pl-4">
-                «Каждый человек от природы наделен творческой искрой. Моя задача как режиссера и педагога — не подогнать ученика под шаблон, а бережно снять страхи, помочь зазвучать его индивидуальности и вывести его на сцену уверенным и свободным творцом.»
-              </blockquote>
-
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm text-zinc-300 mb-8 font-medium">
-                <div class="flex items-center gap-2">
-                  <span class="w-1.5 h-1.5 rounded-full bg-amber-400 shrink-0"></span>
-                  <span>Режиссер аншлаговых постановок</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <span class="w-1.5 h-1.5 rounded-full bg-amber-400 shrink-0"></span>
-                  <span>Индивидуальный подход к каждому</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <span class="w-1.5 h-1.5 rounded-full bg-amber-400 shrink-0"></span>
-                  <span>Подготовка к театральным ВУЗам</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <span class="w-1.5 h-1.5 rounded-full bg-amber-400 shrink-0"></span>
-                  <span>Авторские сценические методики</span>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <button onclick="openTicketModal('Индивидуальное занятие с режиссером')" class="btn-spotlight text-xs py-3 px-6">
-                Записаться на консультацию к режиссеру
-              </button>
-            </div>
+          <div class="pt-6 border-t border-white/5 flex items-center justify-between">
+            <span class="text-xs text-zinc-400">Набор в группу 18+</span>
+            <button 
+              onclick="openTicketModal('Взрослая труппа (18+) — наставник Е.И. Сетьков')" 
+              class="px-4 py-2 text-xs font-semibold rounded-full bg-amber-400/10 text-amber-300 hover:bg-amber-400 hover:text-black border border-amber-400/30 transition-all duration-200"
+            >
+              Записаться к педагогу
+            </button>
           </div>
-
         </div>
+
+        <!-- Mentor 2: Инна Владимировна Захарова -->
+        <div class="glass-panel p-8 sm:p-10 rounded-3xl relative overflow-hidden flex flex-col justify-between group hover:border-amber-500/30 transition-all duration-300">
+          <div>
+            <div class="flex flex-col sm:flex-row gap-6 items-center sm:items-start mb-6">
+              <div class="relative w-36 h-44 sm:w-40 sm:h-48 rounded-2xl overflow-hidden shrink-0 border border-amber-500/20 shadow-[0_0_20px_rgba(245,158,11,0.15)]">
+                <img 
+                  src="/images/covers/director-zakharova.jpg" 
+                  alt="Инна Владимировна Захарова — педагог и режиссер" 
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                <span class="absolute bottom-2.5 left-2.5 right-2.5 text-[10px] uppercase font-semibold text-amber-300 tracking-wider text-center">
+                  Детские направления
+                </span>
+              </div>
+              <div class="text-center sm:text-left flex-1">
+                <span class="inline-block px-3 py-1 rounded-full text-[11px] font-semibold bg-amber-400/10 text-amber-300 border border-amber-400/20 mb-2">
+                  Режиссер премьеры «Мед, шарики и большие приключения»
+                </span>
+                <h3 class="font-serif text-2xl sm:text-3xl font-bold text-white mb-1">
+                  Инна Владимировна Захарова
+                </h3>
+                <p class="text-xs text-zinc-400 mb-4 font-medium">
+                  Педагог & Режиссер-постановщик детских спектаклей
+                </p>
+                <blockquote class="text-zinc-300 text-xs sm:text-sm italic leading-relaxed border-l-2 border-amber-500 pl-3">
+                  «Каждый ребенок приходит в студию с уникальной фантазией. Наша задача — бережно помочь ему зазвучать ярко и без страха.»
+                </blockquote>
+              </div>
+            </div>
+
+            <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed mb-6">
+              Режиссер сказочных историй и детских спектаклей студии «Артистократ». Выстраивает бережную атмосферу доверия, где юные актеры учатся сценической речи, ритмике, выразительности движений и получают первый радостный опыт игры на настоящей сцене.
+            </p>
+
+            <div class="grid grid-cols-2 gap-2 text-xs text-zinc-300 mb-6">
+              <div class="flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-amber-400 shrink-0"></span>
+                <span>Игровые методики театра</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-amber-400 shrink-0"></span>
+                <span>Развитие дикции и речи</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-amber-400 shrink-0"></span>
+                <span>Сценическая пластика</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-amber-400 shrink-0"></span>
+                <span>Бережная адаптация детей</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-6 border-t border-white/5 flex items-center justify-between">
+            <span class="text-xs text-zinc-400">Группы 5–6 и 7–8 лет</span>
+            <button 
+              onclick="openTicketModal('Детская студия — наставник И.В. Захарова')" 
+              class="px-4 py-2 text-xs font-semibold rounded-full bg-amber-400/10 text-amber-300 hover:bg-amber-400 hover:text-black border border-amber-400/30 transition-all duration-200"
+            >
+              Записаться к педагогу
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Studio Pedagogical Collective Philosophy Banner -->
+      <div class="glass-panel p-6 sm:p-8 rounded-2xl border-white/10 flex flex-col sm:flex-row items-center justify-between gap-6 bg-gradient-to-r from-amber-500/5 via-transparent to-transparent">
+        <div class="flex items-center gap-4 text-center sm:text-left">
+          <div class="w-12 h-12 rounded-xl bg-amber-400/10 border border-amber-400/20 flex items-center justify-center text-amber-300 shrink-0">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+          </div>
+          <div>
+            <h4 class="font-serif text-lg sm:text-xl font-bold text-white mb-0.5">Педагогический коллектив «Артистократа»</h4>
+            <p class="text-xs sm:text-sm text-zinc-400">Действующие актеры, режиссеры и мастера сценической речи с практическим опытом работы на профессиональной сцене.</p>
+          </div>
+        </div>
+        <button onclick="openTicketModal('Консультация с педагогом')" class="btn-spotlight text-xs py-3 px-6 whitespace-nowrap shrink-0">
+          Записаться на пробный урок
+        </button>
       </div>
 
     </div>
@@ -342,9 +446,9 @@
         </p>
       </div>
 
-      <!-- 4 Regular Age Groups (2x2 Balanced Grid) -->
-      <div id="courses-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-        <!-- JS renders 4 balanced cards -->
+      <!-- 5 Regular Age Groups (Responsive Grid) -->
+      <div id="courses-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+        <!-- JS renders 5 balanced cards -->
       </div>
 
       <!-- Full-width Featured Individual Course Banner -->
@@ -639,9 +743,9 @@
       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
       <span>Студия</span>
     </a>
-    <a href="#director" class="dock-item" data-section="director">
+    <a href="#team" class="dock-item" data-section="team">
       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
-      <span>Мастер</span>
+      <span>Педагоги</span>
     </a>
     <a href="#courses" class="dock-item" data-section="courses">
       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
@@ -717,12 +821,14 @@
               class="w-full px-3.5 py-2.5 rounded-xl bg-[#141418] border border-white/10 text-white focus:outline-none focus:border-amber-400 text-sm"
             >
               <option value="Бесплатное пробное занятие">Бесплатное пробное занятие (Любая группа)</option>
-              <option value="Младшая группа (5–7 лет)">Младшая группа (5–7 лет)</option>
-              <option value="Средняя студия (8–12 лет)">Средняя студия (8–12 лет)</option>
-              <option value="Подростковая мастерская (13–17 лет)">Подростковая мастерская (13–17 лет)</option>
+              <option value="Младшая группа (5–6 лет)">Младшая группа (5–6 лет)</option>
+              <option value="Начальная группа (7–8 лет)">Начальная группа (7–8 лет)</option>
+              <option value="Средняя мастерская (9–12 лет)">Средняя мастерская (9–12 лет)</option>
+              <option value="Подростковая труппа (13–17 лет)">Подростковая труппа (13–17 лет)</option>
               <option value="Взрослая труппа (18+)">Взрослая труппа (18+)</option>
               <option value="Индивидуальное занятие">Индивидуальное занятие / Подготовка в ВУЗ</option>
-              <option value="Спектакль: «Очень простая история»">Спектакль: «Очень простая история»</option>
+              <option value="Спектакль: «Очень простая история»">Спектакль: «Очень простая история» (реж. Е. Сетьков)</option>
+              <option value="Спектакль: «Мед, шарики и большие приключения»">Спектакль: «Мед, шарики и большие приключения» (реж. И. Захарова)</option>
               <option value="Спектакль: «У ковчега в восемь»">Спектакль: «У ковчега в восемь»</option>
               <option value="Спектакль: «Алиса в стране чудес»">Спектакль: «Алиса в стране чудес»</option>
             </select>
@@ -766,8 +872,8 @@
   </div>
 
   <!-- Scripts -->
-  <script src="/js/gallery-data.js?v=1.0.1"></script>
-  <script src="/js/spotlight.js?v=1.0.1"></script>
-  <script src="/js/main.js?v=1.0.1"></script>
+  <script src="/js/gallery-data.js?v=1.1.0"></script>
+  <script src="/js/spotlight.js?v=1.1.0"></script>
+  <script src="/js/main.js?v=1.1.0"></script>
 </body>
 </html>

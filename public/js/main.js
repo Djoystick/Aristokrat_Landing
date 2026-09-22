@@ -66,10 +66,17 @@ function renderPlays(plays) {
 
       <div class="p-6 flex-1 flex flex-col justify-between">
         <div>
-          <div class="text-xs uppercase tracking-wider text-amber-400/90 font-semibold mb-1">${play.genre}</div>
-          <h3 class="font-serif text-2xl sm:text-3xl text-white font-bold mb-2 group-hover:text-amber-300 transition-colors">
+          <div class="flex items-center justify-between text-xs text-amber-400/90 font-semibold mb-1">
+            <span class="uppercase tracking-wider">${play.genre}</span>
+            <span class="text-zinc-400 font-normal">${play.author}</span>
+          </div>
+          <h3 class="font-serif text-2xl sm:text-3xl text-white font-bold mb-1.5 group-hover:text-amber-300 transition-colors">
             ${play.title}
           </h3>
+          <div class="text-xs text-amber-300/90 font-medium mb-3 flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-amber-400 shrink-0"></span>
+            <span>Режиссер: ${play.director}</span>
+          </div>
           <p class="text-sm text-zinc-400 leading-relaxed mb-6 font-normal">
             ${play.description}
           </p>
@@ -177,11 +184,11 @@ function renderCourses(courses) {
           <div class="lg:col-span-5 flex flex-col justify-between items-start lg:items-end gap-6 bg-black/40 p-6 sm:p-8 rounded-2xl border border-white/5">
             <div class="text-left lg:text-right">
               <span class="text-xs text-amber-300 font-semibold uppercase tracking-wider block mb-1">С кем проходят занятия:</span>
-              <div class="text-base font-serif font-bold text-white">Режиссер Евгений Сетьков</div>
-              <div class="text-xs text-zinc-400 mt-1">График подбирается индивидуально</div>
+              <div class="text-base font-serif font-bold text-white">Педагоги и наставники студии</div>
+              <div class="text-xs text-zinc-400 mt-1">Наставник подбирается под цели ученика</div>
             </div>
             <button 
-              onclick="openTicketModal('Индивидуальные занятия с режиссером')" 
+              onclick="openTicketModal('Индивидуальные занятия с наставником')" 
               class="btn-spotlight w-full sm:w-auto text-xs py-3.5 px-8"
             >
               Записаться на консультацию
