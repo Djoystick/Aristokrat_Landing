@@ -234,16 +234,108 @@ body {
   border-right-color: transparent;
 }
 
-/* Gallery CSS Columns Masonry (Pinterest/vibeprompts style) */
+/* Gallery: Mobile 3-col Thumbnails & Desktop Masonry Columns */
 .gallery-masonry {
-  column-count: 2;
-  column-gap: 0.65rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.5rem;
 }
 
+.gallery-card {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  background: #141418;
+  aspect-ratio: 1 / 1;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.2s ease;
+}
+
+.gallery-card:active {
+  transform: scale(0.95);
+  border-color: rgba(245, 158, 11, 0.5);
+}
+
+.gallery-card:active img {
+  filter: brightness(1.15);
+}
+
+/* Micro zoom/expand indicator on mobile thumbnail */
+.gallery-card::after {
+  content: '';
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  background: rgba(9, 9, 11, 0.65) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='rgba(255,255,255,0.9)' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4'/%3E%3C/svg%3E") center / 10px no-repeat;
+  opacity: 0.85;
+  pointer-events: none;
+}
+
+.gallery-card-overlay {
+  display: none;
+}
+
+/* Desktop & Tablet: full Pinterest/vibeprompts Masonry with Spotlight */
 @media (min-width: 640px) {
   .gallery-masonry {
+    display: block;
     column-count: 2;
     column-gap: 1.25rem;
+  }
+
+  .gallery-card {
+    aspect-ratio: auto;
+    border-radius: 16px;
+    margin-bottom: 1.25rem;
+    break-inside: avoid;
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .gallery-card img {
+    height: auto;
+  }
+
+  .gallery-card::after {
+    display: none;
+  }
+
+  .gallery-card:hover {
+    border-color: rgba(245, 158, 11, 0.4);
+    box-shadow: 0 15px 35px -10px rgba(245, 158, 11, 0.25);
+  }
+
+  .gallery-card:hover img {
+    transform: scale(1.05);
+  }
+
+  .gallery-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 40%, rgba(9, 9, 11, 0.92) 92%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1.25rem;
+  }
+
+  .gallery-card:hover .gallery-card-overlay {
+    opacity: 1;
   }
 }
 
@@ -252,60 +344,6 @@ body {
     column-count: 3;
     column-gap: 1.5rem;
   }
-}
-
-.gallery-card {
-  position: relative;
-  border-radius: 12px;
-  overflow: hidden;
-  cursor: pointer;
-  background: #121217;
-  break-inside: avoid;
-  margin-bottom: 0.65rem;
-  display: block;
-  width: 100%;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-@media (min-width: 640px) {
-  .gallery-card {
-    border-radius: 16px;
-    margin-bottom: 1.25rem;
-  }
-}
-
-.gallery-card img {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.gallery-card:hover {
-  border-color: rgba(245, 158, 11, 0.4);
-  box-shadow: 0 15px 35px -10px rgba(245, 158, 11, 0.25);
-}
-
-.gallery-card:hover img {
-  transform: scale(1.05);
-}
-
-.gallery-card-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, transparent 40%, rgba(9, 9, 11, 0.92) 92%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 1.25rem;
-}
-
-.gallery-card:hover .gallery-card-overlay {
-  opacity: 1;
 }
 
 .ticket-activated-seal {

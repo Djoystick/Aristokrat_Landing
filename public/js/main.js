@@ -234,6 +234,8 @@ function renderGallery(gallery, activeCategory) {
     ? gallery 
     : gallery.filter(item => item.category === activeCategory);
 
+  currentLightboxList = filtered;
+
   container.innerHTML = filtered.map(item => `
     <div 
       class="gallery-card group" 
@@ -326,11 +328,42 @@ function setupLightbox(gallery) {
     if (e.key === 'ArrowRight') nextLightbox();
     if (e.key === 'ArrowLeft') prevLightbox();
   });
+
+  // Mobile Touch Swipe Navigation (iOS/Telegram photo viewer feel)
+  let touchStartX = 0;
+  let touchStartY = 0;
+
+  modal.addEventListener('touchstart', (e) => {
+    if (e.changedTouches && e.changedTouches.length > 0) {
+      touchStartX = e.changedTouches[0].screenX;
+      touchStartY = e.changedTouches[0].screenY;
+    }
+  }, { passive: true });
+
+  modal.addEventListener('touchend', (e) => {
+    if (!e.changedTouches || e.changedTouches.length === 0) return;
+    const touchEndX = e.changedTouches[0].screenX;
+    const touchEndY = e.changedTouches[0].screenY;
+    const diffX = touchEndX - touchStartX;
+    const diffY = touchEndY - touchStartY;
+
+    // Minimum horizontal swipe distance of 40px, dominating vertical scroll
+    if (Math.abs(diffX) > 40 && Math.abs(diffX) > Math.abs(diffY)) {
+      if (diffX < 0) {
+        nextLightbox(); // Swipe left -> next photo
+      } else {
+        prevLightbox(); // Swipe right -> previous photo
+      }
+    }
+  }, { passive: true });
 }
 
 window.openLightbox = function(id) {
-  const gallery = window.THEATER_DATA.gallery;
-  const idx = gallery.findIndex(g => g.id === id);
+  const list = currentLightboxList && currentLightboxList.length > 0
+    ? currentLightboxList 
+    : window.THEATER_DATA.gallery;
+
+  const idx = list.findIndex(g => g.id === id);
   if (idx === -1) return;
 
   currentLightboxIndex = idx;
@@ -352,19 +385,26 @@ window.closeLightbox = function() {
 };
 
 window.nextLightbox = function() {
-  const gallery = window.THEATER_DATA.gallery;
-  currentLightboxIndex = (currentLightboxIndex + 1) % gallery.length;
+  const list = currentLightboxList && currentLightboxList.length > 0 
+    ? currentLightboxList 
+    : window.THEATER_DATA.gallery;
+  currentLightboxIndex = (currentLightboxIndex + 1) % list.length;
   updateLightboxContent();
 };
 
 window.prevLightbox = function() {
-  const gallery = window.THEATER_DATA.gallery;
-  currentLightboxIndex = (currentLightboxIndex - 1 + gallery.length) % gallery.length;
+  const list = currentLightboxList && currentLightboxList.length > 0 
+    ? currentLightboxList 
+    : window.THEATER_DATA.gallery;
+  currentLightboxIndex = (currentLightboxIndex - 1 + list.length) % list.length;
   updateLightboxContent();
 };
 
 function updateLightboxContent() {
-  const item = window.THEATER_DATA.gallery[currentLightboxIndex];
+  const list = currentLightboxList && currentLightboxList.length > 0 
+    ? currentLightboxList 
+    : window.THEATER_DATA.gallery;
+  const item = list[currentLightboxIndex];
   if (!item) return;
 
   const img = document.getElementById('lightbox-img');
@@ -375,7 +415,7 @@ function updateLightboxContent() {
   if (img) img.src = item.src;
   if (title) title.textContent = item.title;
   if (desc) desc.textContent = item.desc;
-  if (counter) counter.textContent = `${currentLightboxIndex + 1} / ${window.THEATER_DATA.gallery.length}`;
+  if (counter) counter.textContent = `${currentLightboxIndex + 1} / ${list.length}`;
 }
 
 /**
