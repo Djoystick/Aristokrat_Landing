@@ -51,7 +51,7 @@
   </script>
 
   <!-- Custom Stylesheet -->
-  <link rel="stylesheet" href="/css/style.css?v=1.1.0">
+  <link rel="stylesheet" href="/css/style.css?v=1.1.1">
 </head>
 <body class="bg-[#09090b] text-[#fafafa] relative selection:bg-amber-500 selection:text-black">
 
@@ -101,7 +101,7 @@
   </header>
 
   <!-- ==================== 1. HERO SECTION ==================== -->
-  <section id="hero" class="relative min-h-[92vh] flex items-center justify-center pt-24 pb-20 overflow-hidden">
+  <section id="hero" class="relative min-h-[85vh] sm:min-h-[92vh] flex items-center justify-center pt-20 pb-12 sm:pt-28 sm:pb-20 overflow-hidden">
     <!-- Interactive Canvas Spotlight & Dust Motes -->
     <canvas id="spotlight-canvas" class="absolute inset-0 w-full h-full pointer-events-none z-10"></canvas>
 
@@ -112,52 +112,52 @@
     <div class="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       
       <!-- Stage Status Badge -->
-      <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/[0.04] border border-white/10 backdrop-blur-md mb-8 animate-pulse-glow">
+      <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white/[0.04] border border-white/10 backdrop-blur-md mb-6 sm:mb-8 animate-pulse-glow">
         <span class="w-2 h-2 rounded-full bg-amber-400 shadow-[0_0_8px_#f59e0b]"></span>
-        <span class="text-xs font-medium uppercase tracking-wider text-amber-200/90">Своя сцена • Профессиональный свет • Аншлаги</span>
+        <span class="text-[11px] sm:text-xs font-medium uppercase tracking-wider text-amber-200/90">Своя сцена • Профессиональный свет • Аншлаги</span>
       </div>
 
       <!-- Main Headline -->
-      <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white mb-6 leading-[1.08]">
+      <h1 class="font-serif text-3xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white mb-4 sm:mb-6 leading-[1.12] sm:leading-[1.08]">
         Раскройте своего артиста <br class="hidden sm:inline">
         <span class="text-gold-gradient">на настоящей сцене</span>
       </h1>
 
       <!-- Subtitle -->
-      <p class="text-base sm:text-lg md:text-xl text-zinc-300 max-w-2xl mx-auto mb-10 leading-relaxed font-light">
+      <p class="text-sm sm:text-lg md:text-xl text-zinc-300 max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed font-light px-2">
         Уютная театральная студия в Курске со своей сценой. Актерское мастерство, сценическая речь и постановка репертуарных спектаклей для детей, подростков и взрослых 18+.
       </p>
 
       <!-- CTA Buttons -->
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-        <button onclick="openTicketModal('Бесплатное пробное занятие')" class="btn-spotlight w-full sm:w-auto text-sm sm:text-base py-3.5 px-8">
-          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-10 sm:mb-16 w-full max-w-md sm:max-w-none mx-auto">
+        <button onclick="openTicketModal('Бесплатное пробное занятие')" class="btn-spotlight w-full sm:w-auto text-xs sm:text-base py-3 sm:py-3.5 px-6 sm:px-8">
+          <svg class="w-4 h-4 sm:w-5 sm:h-5 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z" />
           </svg>
           Бесплатный пробный урок
         </button>
-        <a href="#plays" class="btn-ghost-stage w-full sm:w-auto text-sm sm:text-base py-3.5 px-8">
+        <a href="#plays" class="btn-ghost-stage w-full sm:w-auto text-xs sm:text-base py-3 sm:py-3.5 px-6 sm:px-8">
           Смотреть репертуар и афишу
         </a>
       </div>
 
       <!-- Trust Metrics (Balanced 4-Card Row) -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-left">
-        <div class="glass-panel p-5 rounded-2xl flex flex-col justify-between">
-          <div class="font-serif text-3xl sm:text-4xl font-bold text-amber-300 mb-1">4 дня</div>
-          <div class="text-xs text-zinc-400 font-medium leading-snug">Аншлагов подряд на премьере спектакля</div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 text-left">
+        <div class="glass-panel p-3.5 sm:p-5 rounded-xl sm:rounded-2xl flex flex-col justify-between">
+          <div class="font-serif text-2xl sm:text-4xl font-bold text-amber-300 mb-0.5 sm:mb-1">4 дня</div>
+          <div class="text-[11px] sm:text-xs text-zinc-400 font-medium leading-snug">Аншлагов подряд на премьере спектакля</div>
         </div>
-        <div class="glass-panel p-5 rounded-2xl flex flex-col justify-between">
-          <div class="font-serif text-3xl sm:text-4xl font-bold text-amber-300 mb-1">100%</div>
-          <div class="text-xs text-zinc-400 font-medium leading-snug">Учеников выходят на сцену в спектаклях</div>
+        <div class="glass-panel p-3.5 sm:p-5 rounded-xl sm:rounded-2xl flex flex-col justify-between">
+          <div class="font-serif text-2xl sm:text-4xl font-bold text-amber-300 mb-0.5 sm:mb-1">100%</div>
+          <div class="text-[11px] sm:text-xs text-zinc-400 font-medium leading-snug">Учеников выходят на сцену в спектаклях</div>
         </div>
-        <div class="glass-panel p-5 rounded-2xl flex flex-col justify-between">
-          <div class="font-serif text-3xl sm:text-4xl font-bold text-amber-300 mb-1">5+ лет</div>
-          <div class="text-xs text-zinc-400 font-medium leading-snug">Возраст для старта: от малышей до 18+</div>
+        <div class="glass-panel p-3.5 sm:p-5 rounded-xl sm:rounded-2xl flex flex-col justify-between">
+          <div class="font-serif text-2xl sm:text-4xl font-bold text-amber-300 mb-0.5 sm:mb-1">5+ лет</div>
+          <div class="text-[11px] sm:text-xs text-zinc-400 font-medium leading-snug">Возраст для старта: от малышей до 18+</div>
         </div>
-        <div class="glass-panel p-5 rounded-2xl flex flex-col justify-between">
-          <div class="font-serif text-3xl sm:text-4xl font-bold text-amber-300 mb-1">Своя сцена</div>
-          <div class="text-xs text-zinc-400 font-medium leading-snug">С софитами, кулисами и зрительным залом</div>
+        <div class="glass-panel p-3.5 sm:p-5 rounded-xl sm:rounded-2xl flex flex-col justify-between">
+          <div class="font-serif text-2xl sm:text-4xl font-bold text-amber-300 mb-0.5 sm:mb-1">Своя сцена</div>
+          <div class="text-[11px] sm:text-xs text-zinc-400 font-medium leading-snug">С софитами, кулисами и зрительным залом</div>
         </div>
       </div>
 
@@ -165,90 +165,90 @@
   </section>
 
   <!-- ==================== 2. BENTO GRID: О СТУДИИ ==================== -->
-  <section id="about" class="py-24 relative border-t border-white/5">
+  <section id="about" class="py-12 sm:py-16 lg:py-24 relative border-t border-white/5">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="text-center max-w-2xl mx-auto mb-16">
+      <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-16">
         <span class="badge-stage mb-3">О пространстве</span>
-        <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mb-4">
+        <h2 class="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4">
           Театр, в котором оживают мечты
         </h2>
-        <p class="text-zinc-400 text-sm sm:text-base leading-relaxed">
+        <p class="text-zinc-400 text-xs sm:text-base leading-relaxed">
           «Артистократ» — это не просто школа актерского мастерства. Это творческая семья, где каждый находит свой голос, побеждает страх сцены и проживает настоящие эмоции.
         </p>
       </div>
 
       <!-- Symmetrical 2-Row Bento Grid (2+1 and 1+2) -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
         
         <!-- Row 1, Card 1 (Span 2) -->
-        <div class="glass-panel md:col-span-2 p-8 sm:p-10 rounded-3xl flex flex-col justify-between relative overflow-hidden group min-h-[280px]">
+        <div class="glass-panel md:col-span-2 p-5 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl flex flex-col justify-between relative overflow-hidden group min-h-0 sm:min-h-[260px]">
           <div class="relative z-10">
-            <span class="text-xs font-semibold uppercase tracking-wider text-amber-400 mb-2 block">Сценическая база</span>
-            <h3 class="font-serif text-3xl sm:text-4xl font-bold text-white mb-4">
+            <span class="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-amber-400 mb-1.5 sm:mb-2 block">Сценическая база</span>
+            <h3 class="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-2 sm:mb-4">
               Собственная оборудованная сцена в Курске
             </h3>
-            <p class="text-zinc-300 text-sm sm:text-base max-w-xl leading-relaxed mb-8">
+            <p class="text-zinc-300 text-xs sm:text-base max-w-xl leading-relaxed mb-6 sm:mb-8">
               Репетиции проходят не в пустых классах, а на реальной театральной площадке. Ученики привыкают к лучам софитов, сценической геометрии, акустике зала и энергетике зрителя с первых месяцев обучения.
             </p>
           </div>
-          <div class="relative z-10 flex flex-wrap gap-3">
-            <span class="px-3 py-1.5 rounded-full text-xs font-medium bg-white/5 border border-white/10 text-zinc-300">Софиты и заливной свет</span>
-            <span class="px-3 py-1.5 rounded-full text-xs font-medium bg-white/5 border border-white/10 text-zinc-300">Профессиональная акустика</span>
-            <span class="px-3 py-1.5 rounded-full text-xs font-medium bg-white/5 border border-white/10 text-zinc-300">Уютный зрительный зал</span>
+          <div class="relative z-10 flex flex-wrap gap-2 sm:gap-3">
+            <span class="px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full text-[11px] sm:text-xs font-medium bg-white/5 border border-white/10 text-zinc-300">Софиты и заливной свет</span>
+            <span class="px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full text-[11px] sm:text-xs font-medium bg-white/5 border border-white/10 text-zinc-300">Профессиональная акустика</span>
+            <span class="px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full text-[11px] sm:text-xs font-medium bg-white/5 border border-white/10 text-zinc-300">Уютный зрительный зал</span>
           </div>
           <div class="absolute -right-16 -bottom-16 w-80 h-80 rounded-full bg-amber-500/10 blur-3xl group-hover:bg-amber-500/20 transition-all duration-700 pointer-events-none"></div>
         </div>
 
         <!-- Row 1, Card 2 (Span 1) -->
-        <div class="glass-panel p-8 rounded-3xl flex flex-col justify-between group min-h-[280px]">
+        <div class="glass-panel p-5 sm:p-8 rounded-2xl sm:rounded-3xl flex flex-col justify-between group min-h-0 sm:min-h-[260px]">
           <div>
-            <div class="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 mb-6 group-hover:scale-110 transition-transform">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 mb-4 sm:mb-6 group-hover:scale-110 transition-transform">
+              <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
-            <h3 class="font-serif text-2xl font-bold text-white mb-3">Свобода от зажимов</h3>
-            <p class="text-zinc-400 text-sm leading-relaxed">
+            <h3 class="font-serif text-xl sm:text-2xl font-bold text-white mb-2 sm:mb-3">Свобода от зажимов</h3>
+            <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed">
               Убираем скованность тела, страх чужой оценки и неуверенность. Голос становится глубоким и убедительным, а движения — легкими и естественными.
             </p>
           </div>
-          <div class="mt-6 pt-6 border-t border-white/5 text-xs text-amber-300 font-medium">
+          <div class="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-white/5 text-[11px] sm:text-xs text-amber-300 font-medium">
             Практики снятия зажимов по Станиславскому и Чехову
           </div>
         </div>
 
         <!-- Row 2, Card 3 (Span 1) -->
-        <div class="glass-panel p-8 rounded-3xl flex flex-col justify-between group min-h-[280px]">
+        <div class="glass-panel p-5 sm:p-8 rounded-2xl sm:rounded-3xl flex flex-col justify-between group min-h-0 sm:min-h-[260px]">
           <div>
-            <div class="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 mb-6 group-hover:scale-110 transition-transform">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 mb-4 sm:mb-6 group-hover:scale-110 transition-transform">
+              <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 100-6 3 3 0 000 6z" />
               </svg>
             </div>
-            <h3 class="font-serif text-2xl font-bold text-white mb-3">Речь и ораторское слово</h3>
-            <p class="text-zinc-400 text-sm leading-relaxed">
+            <h3 class="font-serif text-xl sm:text-2xl font-bold text-white mb-2 sm:mb-3">Речь и ораторское слово</h3>
+            <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed">
               Правильное дыхание на опоре, четкая дикция, богатство интонаций и умение владеть вниманием аудитории — как со сцены, так и в жизни.
             </p>
           </div>
-          <div class="mt-6 pt-6 border-t border-white/5 text-xs text-amber-300 font-medium">
+          <div class="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-white/5 text-[11px] sm:text-xs text-amber-300 font-medium">
             Постановка голоса и сценического дыхания
           </div>
         </div>
 
         <!-- Row 2, Card 4 (Span 2) -->
-        <div class="glass-panel md:col-span-2 p-8 sm:p-10 rounded-3xl flex flex-col justify-between relative overflow-hidden group min-h-[280px]">
+        <div class="glass-panel md:col-span-2 p-5 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl flex flex-col justify-between relative overflow-hidden group min-h-0 sm:min-h-[260px]">
           <div class="relative z-10">
-            <span class="text-xs font-semibold uppercase tracking-wider text-amber-400 mb-2 block">Спектакли со зрителем</span>
-            <h3 class="font-serif text-3xl sm:text-4xl font-bold text-white mb-4">
+            <span class="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-amber-400 mb-1.5 sm:mb-2 block">Спектакли со зрителем</span>
+            <h3 class="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-2 sm:mb-4">
               Репертуарный театр с аншлагами
             </h3>
-            <p class="text-zinc-300 text-sm sm:text-base max-w-xl leading-relaxed mb-6">
+            <p class="text-zinc-300 text-xs sm:text-base max-w-xl leading-relaxed mb-4 sm:mb-6">
               Мы не учим «в стол». Каждый учебный сезон завершается премьерой полноценного репертуарного спектакля с костюмами, гримом, профессиональным светом и полным залом зрителей (4 аншлага на премьере «Очень простой истории»).
             </p>
           </div>
-          <div class="relative z-10 flex items-center justify-between pt-4 border-t border-white/10">
-            <span class="text-xs text-zinc-400">100% выпускников выходят на сцену</span>
+          <div class="relative z-10 flex flex-col sm:flex-row sm:items-center justify-between pt-4 border-t border-white/10 gap-2">
+            <span class="text-[11px] sm:text-xs text-zinc-400">100% выпускников выходят на сцену</span>
             <a href="#plays" class="text-xs font-semibold text-amber-300 hover:text-amber-200 flex items-center gap-1">
               Смотреть репертуар студии →
             </a>
@@ -261,34 +261,34 @@
   </section>
 
   <!-- ==================== 3. ПЕДАГОГИ И РЕЖИССЕРЫ СТУДИИ ==================== -->
-  <section id="team" class="py-24 relative border-t border-white/5 bg-[#09090b]/40">
+  <section id="team" class="py-12 sm:py-16 lg:py-24 relative border-t border-white/5 bg-[#09090b]/40">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="text-center max-w-2xl mx-auto mb-16">
+      <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-16">
         <span class="badge-stage mb-3">Команда наставников</span>
-        <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mb-4">
+        <h2 class="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4">
           Педагоги и режиссеры студии
         </h2>
-        <p class="text-zinc-400 text-sm sm:text-base">
+        <p class="text-zinc-400 text-xs sm:text-base">
           Опытные актеры и театральные деятели, готовые делиться знаниями, практикой живой сцены и вести каждого ученика от первых шагов до премьерных аплодисментов.
         </p>
       </div>
 
       <!-- 2 Major Director & Mentor Cards -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 mb-8 sm:mb-12">
         
         <!-- Mentor 1: Евгений Игоревич Сетьков -->
-        <div class="glass-panel p-8 sm:p-10 rounded-3xl relative overflow-hidden flex flex-col justify-between group hover:border-amber-500/30 transition-all duration-300">
+        <div class="glass-panel p-5 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl relative overflow-hidden flex flex-col justify-between group hover:border-amber-500/30 transition-all duration-300">
           <div>
-            <div class="flex flex-col sm:flex-row gap-6 items-center sm:items-start mb-6">
-              <div class="relative w-36 h-44 sm:w-40 sm:h-48 rounded-2xl overflow-hidden shrink-0 border border-amber-500/20 shadow-[0_0_20px_rgba(245,158,11,0.15)]">
+            <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 items-center sm:items-start mb-5 sm:mb-6">
+              <div class="relative w-32 h-40 sm:w-40 sm:h-48 rounded-xl sm:rounded-2xl overflow-hidden shrink-0 border border-amber-500/20 shadow-[0_0_20px_rgba(245,158,11,0.15)]">
                 <img 
                   src="/images/covers/director-setkov.jpg" 
                   alt="Евгений Игоревич Сетьков — педагог и режиссер" 
                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                <span class="absolute bottom-2.5 left-2.5 right-2.5 text-[10px] uppercase font-semibold text-amber-300 tracking-wider text-center">
+                <span class="absolute bottom-2 left-2 right-2 text-[10px] uppercase font-semibold text-amber-300 tracking-wider text-center">
                   Взрослая труппа 18+
                 </span>
               </div>
@@ -296,10 +296,10 @@
                 <span class="inline-block px-3 py-1 rounded-full text-[11px] font-semibold bg-amber-400/10 text-amber-300 border border-amber-400/20 mb-2">
                   Режиссер спектакля «Очень простая история»
                 </span>
-                <h3 class="font-serif text-2xl sm:text-3xl font-bold text-white mb-1">
+                <h3 class="font-serif text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-1">
                   Евгений Игоревич Сетьков
                 </h3>
-                <p class="text-xs text-zinc-400 mb-4 font-medium">
+                <p class="text-xs text-zinc-400 mb-3 sm:mb-4 font-medium">
                   Педагог актерского мастерства & Режиссер-постановщик
                 </p>
                 <blockquote class="text-zinc-300 text-xs sm:text-sm italic leading-relaxed border-l-2 border-amber-500 pl-3">
@@ -308,7 +308,7 @@
               </div>
             </div>
 
-            <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed mb-6">
+            <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed mb-5 sm:mb-6">
               Ведет актерское мастерство для взрослой группы 18+, осуществляет постановку глубоких драматических спектаклей (4 аншлага подряд на премьере «Очень простой истории»). Помогает снять внутренние зажимы, страх публичности и раскрыть творческую индивидуальность.
             </p>
 
@@ -332,7 +332,7 @@
             </div>
           </div>
 
-          <div class="pt-6 border-t border-white/5 flex items-center justify-between">
+          <div class="pt-5 sm:pt-6 border-t border-white/5 flex items-center justify-between">
             <span class="text-xs text-zinc-400">Набор в группу 18+</span>
             <button 
               onclick="openTicketModal('Взрослая труппа (18+) — наставник Е.И. Сетьков')" 
@@ -344,17 +344,17 @@
         </div>
 
         <!-- Mentor 2: Инна Владимировна Захарова -->
-        <div class="glass-panel p-8 sm:p-10 rounded-3xl relative overflow-hidden flex flex-col justify-between group hover:border-amber-500/30 transition-all duration-300">
+        <div class="glass-panel p-5 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl relative overflow-hidden flex flex-col justify-between group hover:border-amber-500/30 transition-all duration-300">
           <div>
-            <div class="flex flex-col sm:flex-row gap-6 items-center sm:items-start mb-6">
-              <div class="relative w-36 h-44 sm:w-40 sm:h-48 rounded-2xl overflow-hidden shrink-0 border border-amber-500/20 shadow-[0_0_20px_rgba(245,158,11,0.15)]">
+            <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 items-center sm:items-start mb-5 sm:mb-6">
+              <div class="relative w-32 h-40 sm:w-40 sm:h-48 rounded-xl sm:rounded-2xl overflow-hidden shrink-0 border border-amber-500/20 shadow-[0_0_20px_rgba(245,158,11,0.15)]">
                 <img 
                   src="/images/covers/director-zakharova.jpg" 
                   alt="Инна Владимировна Захарова — педагог и режиссер" 
                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                <span class="absolute bottom-2.5 left-2.5 right-2.5 text-[10px] uppercase font-semibold text-amber-300 tracking-wider text-center">
+                <span class="absolute bottom-2 left-2 right-2 text-[10px] uppercase font-semibold text-amber-300 tracking-wider text-center">
                   Детские направления
                 </span>
               </div>
@@ -362,10 +362,10 @@
                 <span class="inline-block px-3 py-1 rounded-full text-[11px] font-semibold bg-amber-400/10 text-amber-300 border border-amber-400/20 mb-2">
                   Режиссер премьеры «Мед, шарики и большие приключения»
                 </span>
-                <h3 class="font-serif text-2xl sm:text-3xl font-bold text-white mb-1">
+                <h3 class="font-serif text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-1">
                   Инна Владимировна Захарова
                 </h3>
-                <p class="text-xs text-zinc-400 mb-4 font-medium">
+                <p class="text-xs text-zinc-400 mb-3 sm:mb-4 font-medium">
                   Педагог & Режиссер-постановщик детских спектаклей
                 </p>
                 <blockquote class="text-zinc-300 text-xs sm:text-sm italic leading-relaxed border-l-2 border-amber-500 pl-3">
@@ -374,7 +374,7 @@
               </div>
             </div>
 
-            <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed mb-6">
+            <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed mb-5 sm:mb-6">
               Режиссер сказочных историй и детских спектаклей студии «Артистократ». Выстраивает бережную атмосферу доверия, где юные актеры учатся сценической речи, ритмике, выразительности движений и получают первый радостный опыт игры на настоящей сцене.
             </p>
 
@@ -398,7 +398,7 @@
             </div>
           </div>
 
-          <div class="pt-6 border-t border-white/5 flex items-center justify-between">
+          <div class="pt-5 sm:pt-6 border-t border-white/5 flex items-center justify-between">
             <span class="text-xs text-zinc-400">Группы 5–6 и 7–8 лет</span>
             <button 
               onclick="openTicketModal('Детская студия — наставник И.В. Захарова')" 
@@ -412,19 +412,19 @@
       </div>
 
       <!-- Studio Pedagogical Collective Philosophy Banner -->
-      <div class="glass-panel p-6 sm:p-8 rounded-2xl border-white/10 flex flex-col sm:flex-row items-center justify-between gap-6 bg-gradient-to-r from-amber-500/5 via-transparent to-transparent">
+      <div class="glass-panel p-5 sm:p-8 rounded-2xl border-white/10 flex flex-col sm:flex-row items-center justify-between gap-5 sm:gap-6 bg-gradient-to-r from-amber-500/5 via-transparent to-transparent">
         <div class="flex items-center gap-4 text-center sm:text-left">
-          <div class="w-12 h-12 rounded-xl bg-amber-400/10 border border-amber-400/20 flex items-center justify-center text-amber-300 shrink-0">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-amber-400/10 border border-amber-400/20 flex items-center justify-center text-amber-300 shrink-0">
+            <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
             </svg>
           </div>
           <div>
-            <h4 class="font-serif text-lg sm:text-xl font-bold text-white mb-0.5">Педагогический коллектив «Артистократа»</h4>
+            <h4 class="font-serif text-base sm:text-xl font-bold text-white mb-0.5">Педагогический коллектив «Артистократа»</h4>
             <p class="text-xs sm:text-sm text-zinc-400">Действующие актеры, режиссеры и мастера сценической речи с практическим опытом работы на профессиональной сцене.</p>
           </div>
         </div>
-        <button onclick="openTicketModal('Консультация с педагогом')" class="btn-spotlight text-xs py-3 px-6 whitespace-nowrap shrink-0">
+        <button onclick="openTicketModal('Консультация с педагогом')" class="btn-spotlight text-xs py-3 px-6 whitespace-nowrap shrink-0 w-full sm:w-auto text-center">
           Записаться на пробный урок
         </button>
       </div>
@@ -433,53 +433,67 @@
   </section>
 
   <!-- ==================== 4. НАПРАВЛЕНИЯ И ГРУППЫ ==================== -->
-  <section id="courses" class="py-24 relative border-t border-white/5">
+  <section id="courses" class="py-12 sm:py-16 lg:py-24 relative border-t border-white/5">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="text-center max-w-2xl mx-auto mb-16">
+      <div class="text-center max-w-2xl mx-auto mb-6 sm:mb-10">
         <span class="badge-stage mb-3">Обучение</span>
-        <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mb-4">
+        <h2 class="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4">
           Направления и возрастные группы
         </h2>
-        <p class="text-zinc-400 text-sm sm:text-base">
+        <p class="text-zinc-400 text-xs sm:text-base">
           Программы построены с учетом психологических и возрастных особенностей — от игрового развития дошкольников до глубокой драматургии взрослых.
         </p>
       </div>
 
-      <!-- 5 Regular Age Groups (Responsive Grid) -->
-      <div id="courses-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-        <!-- JS renders 5 balanced cards -->
+      <!-- Course Filter Tabs -->
+      <div class="flex flex-wrap items-center justify-center gap-2 mb-4 sm:mb-8">
+        <button onclick="filterCourses('all', this)" class="course-filter-btn px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs font-semibold bg-amber-400 text-black transition-all">Все направления (6)</button>
+        <button onclick="filterCourses('kids', this)" class="course-filter-btn px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs font-medium bg-white/5 hover:bg-white/10 text-zinc-400 transition-all">Дети 5–8 лет</button>
+        <button onclick="filterCourses('teens', this)" class="course-filter-btn px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs font-medium bg-white/5 hover:bg-white/10 text-zinc-400 transition-all">Подростки 9–17 лет</button>
+        <button onclick="filterCourses('adults', this)" class="course-filter-btn px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs font-medium bg-white/5 hover:bg-white/10 text-zinc-400 transition-all">Взрослые 18+</button>
+        <button onclick="filterCourses('individual', this)" class="course-filter-btn px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs font-medium bg-white/5 hover:bg-white/10 text-zinc-400 transition-all">Индивидуально</button>
       </div>
 
-      <!-- Full-width Featured Individual Course Banner -->
-      <div id="individual-course-container">
-        <!-- JS renders horizontal master banner -->
+      <!-- Mobile Swipe Hint -->
+      <div class="sm:hidden text-center text-[11px] text-amber-400/70 mb-3 flex items-center justify-center gap-1.5 font-medium">
+        <span>← Свайпните для выбора группы →</span>
+      </div>
+
+      <!-- 6 Balanced Cards (3x2 Desktop, Swipe Carousel Mobile) -->
+      <div id="courses-grid" class="flex sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 overflow-x-auto sm:overflow-visible snap-x snap-mandatory scrollbar-none pb-4 sm:pb-0">
+        <!-- JS renders 6 balanced cards -->
       </div>
 
     </div>
   </section>
 
   <!-- ==================== 5. РЕПЕРТУАР И АФИША ==================== -->
-  <section id="plays" class="py-24 relative bg-[#09090b]/60 border-t border-white/5">
+  <section id="plays" class="py-12 sm:py-16 lg:py-24 relative bg-[#09090b]/60 border-t border-white/5">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-16 gap-4 sm:gap-6">
         <div>
           <span class="badge-stage mb-3">Сцена и жизнь</span>
-          <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mb-4">
+          <h2 class="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4">
             Репертуар и постановки студии
           </h2>
-          <p class="text-zinc-400 text-sm sm:text-base max-w-xl">
-            Спектакли, поставленные режиссером Евгением Сетьковым совместно с учениками студии «Артистократ».
+          <p class="text-zinc-400 text-xs sm:text-base max-w-xl">
+            Спектакли, поставленные режиссерами и наставниками студии «Артистократ» совместно с нашими учениками.
           </p>
         </div>
-        <button onclick="openTicketModal('Бронирование билета на спектакль')" class="btn-spotlight text-xs self-start md:self-auto">
+        <button onclick="openTicketModal('Бронирование билета на спектакль')" class="btn-spotlight text-xs self-start md:self-auto py-2.5 px-5">
           Забронировать билет в зал
         </button>
       </div>
 
-      <!-- Plays Cards Grid (Rendered by JS, Balanced 2x2) -->
-      <div id="plays-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Mobile Swipe Hint -->
+      <div class="sm:hidden text-center text-[11px] text-amber-400/70 mb-3 flex items-center justify-center gap-1.5 font-medium">
+        <span>← Свайпните афишу спектаклей →</span>
+      </div>
+
+      <!-- Plays Cards Grid (Rendered by JS, Balanced 2x2 on desktop, Touch Swipe on mobile) -->
+      <div id="plays-grid" class="flex sm:grid sm:grid-cols-2 gap-4 sm:gap-8 overflow-x-auto sm:overflow-visible snap-x snap-mandatory scrollbar-none pb-4 sm:pb-0">
         <!-- JS injects cards from gallery-data.js -->
       </div>
 
@@ -487,27 +501,27 @@
   </section>
 
   <!-- ==================== 6. ФОТОГАЛЕРЕЯ VISUAL SHOWCASE ==================== -->
-  <section id="gallery" class="py-24 relative border-t border-white/5">
+  <section id="gallery" class="py-12 sm:py-16 lg:py-24 relative border-t border-white/5">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-6 sm:mb-12 gap-4 sm:gap-6">
         <div>
           <span class="badge-stage mb-3">Кадры со сцены</span>
-          <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mb-4">
+          <h2 class="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4">
             Жизнь на сцене и за кулисами
           </h2>
-          <p class="text-zinc-400 text-sm sm:text-base max-w-xl">
+          <p class="text-zinc-400 text-xs sm:text-base max-w-xl">
             Подлинные фотографии с наших премьер, репетиций и эмоциональных актерских этюдов. Нажмите на любой кадр для полноэкранного просмотра.
           </p>
         </div>
 
         <!-- Filter Buttons -->
-        <div class="flex flex-wrap gap-2">
-          <button onclick="filterGallery('all', this)" class="gallery-filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-amber-400 text-black transition-all">Все кадры</button>
-          <button onclick="filterGallery('premieres', this)" class="gallery-filter-btn px-4 py-2 rounded-full text-xs font-medium bg-white/5 hover:bg-white/10 text-zinc-400 transition-all">Премьеры</button>
-          <button onclick="filterGallery('stage', this)" class="gallery-filter-btn px-4 py-2 rounded-full text-xs font-medium bg-white/5 hover:bg-white/10 text-zinc-400 transition-all">Сцена</button>
-          <button onclick="filterGallery('rehearsal', this)" class="gallery-filter-btn px-4 py-2 rounded-full text-xs font-medium bg-white/5 hover:bg-white/10 text-zinc-400 transition-all">Репетиции</button>
-          <button onclick="filterGallery('kids', this)" class="gallery-filter-btn px-4 py-2 rounded-full text-xs font-medium bg-white/5 hover:bg-white/10 text-zinc-400 transition-all">Дети</button>
+        <div class="flex flex-wrap gap-1.5 sm:gap-2">
+          <button onclick="filterGallery('all', this)" class="gallery-filter-btn px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs font-semibold bg-amber-400 text-black transition-all">Все кадры</button>
+          <button onclick="filterGallery('premieres', this)" class="gallery-filter-btn px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs font-medium bg-white/5 hover:bg-white/10 text-zinc-400 transition-all">Премьеры</button>
+          <button onclick="filterGallery('stage', this)" class="gallery-filter-btn px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs font-medium bg-white/5 hover:bg-white/10 text-zinc-400 transition-all">Сцена</button>
+          <button onclick="filterGallery('rehearsal', this)" class="gallery-filter-btn px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs font-medium bg-white/5 hover:bg-white/10 text-zinc-400 transition-all">Репетиции</button>
+          <button onclick="filterGallery('kids', this)" class="gallery-filter-btn px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs font-medium bg-white/5 hover:bg-white/10 text-zinc-400 transition-all">Дети</button>
         </div>
       </div>
 
@@ -520,32 +534,32 @@
   </section>
 
   <!-- ==================== 7. ТЕАТРАЛЬНЫЙ БИЛЕТ (ИНТЕРАКТИВНЫЙ БЛОК) ==================== -->
-  <section id="ticket" class="py-24 relative bg-gradient-to-b from-[#09090b] via-[#111217] to-[#09090b] border-t border-white/5">
+  <section id="ticket" class="py-12 sm:py-16 lg:py-24 relative bg-gradient-to-b from-[#09090b] via-[#111217] to-[#09090b] border-t border-white/5">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="text-center max-w-xl mx-auto mb-12">
+      <div class="text-center max-w-xl mx-auto mb-8 sm:mb-12">
         <span class="badge-stage mb-3">Пригласительный билет</span>
-        <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mb-3">
+        <h2 class="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold text-white mb-2 sm:mb-3">
           Ваш билет в мир театра
         </h2>
-        <p class="text-zinc-400 text-sm">
+        <p class="text-zinc-400 text-xs sm:text-sm">
           Заполните данные, чтобы забронировать персональный пригласительный на бесплатный первый урок или выбранный спектакль.
         </p>
       </div>
 
       <!-- Ticket Component -->
-      <div class="theater-ticket p-6 sm:p-10">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-white/10">
+      <div class="theater-ticket p-5 sm:p-10">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 pb-4 sm:pb-6 border-b border-white/10">
           <div class="flex items-center gap-3">
-            <img src="/images/logo.png" alt="Логотип" class="w-10 h-10 object-contain">
+            <img src="/images/logo.png" alt="Логотип" class="w-9 h-9 sm:w-10 sm:h-10 object-contain">
             <div>
-              <div class="font-serif text-xl font-bold text-white tracking-wide">АРТИСТОКРАТ</div>
-              <div class="text-[10px] uppercase tracking-widest text-amber-400">Именной пригласительный билет</div>
+              <div class="font-serif text-lg sm:text-xl font-bold text-white tracking-wide">АРТИСТОКРАТ</div>
+              <div class="text-[9px] sm:text-[10px] uppercase tracking-widest text-amber-400">Именной пригласительный билет</div>
             </div>
           </div>
-          <div class="text-right">
+          <div class="text-left sm:text-right">
             <div class="text-xs text-zinc-400">Серия & Номер:</div>
-            <div id="static-ticket-no" class="font-mono font-bold text-amber-300 text-sm sm:text-base">ART-2026-VIP</div>
+            <div id="static-ticket-no" class="font-mono font-bold text-amber-300 text-xs sm:text-base">ART-2026-VIP</div>
           </div>
         </div>
 
@@ -553,49 +567,51 @@
 
         <!-- Ticket Inline Form Content Container -->
         <div id="inline-ticket-card-content">
-          <form onsubmit="handleInlineTicketSubmit(event)" class="space-y-6">
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <form onsubmit="handleInlineTicketSubmit(event)" class="space-y-4 sm:space-y-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
               <div>
-                <label class="block text-xs font-semibold uppercase tracking-wider text-zinc-300 mb-2">Ваше Имя</label>
+                <label class="block text-xs font-semibold uppercase tracking-wider text-zinc-300 mb-1.5 sm:mb-2">Ваше Имя</label>
                 <input 
                   type="text" 
                   id="inline-name" 
                   required 
                   placeholder="Как к вам обращаться?" 
-                  class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-zinc-500 focus:outline-none focus:border-amber-400 text-sm transition-all"
+                  class="w-full px-4 py-2.5 sm:py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-zinc-500 focus:outline-none focus:border-amber-400 text-sm transition-all"
                 />
               </div>
               <div>
-                <label class="block text-xs font-semibold uppercase tracking-wider text-zinc-300 mb-2">Номер телефона</label>
+                <label class="block text-xs font-semibold uppercase tracking-wider text-zinc-300 mb-1.5 sm:mb-2">Номер телефона</label>
                 <input 
                   type="tel" 
                   id="inline-phone" 
                   required 
                   placeholder="+7 (___) ___-__-__" 
-                  class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-zinc-500 focus:outline-none focus:border-amber-400 text-sm font-mono transition-all"
+                  class="w-full px-4 py-2.5 sm:py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-zinc-500 focus:outline-none focus:border-amber-400 text-sm font-mono transition-all"
                 />
               </div>
             </div>
 
             <div>
-              <label class="block text-xs font-semibold uppercase tracking-wider text-zinc-300 mb-2">Выберите направление или спектакль</label>
+              <label class="block text-xs font-semibold uppercase tracking-wider text-zinc-300 mb-1.5 sm:mb-2">Выберите направление или спектакль</label>
               <select 
                 id="inline-target" 
-                class="w-full px-4 py-3 rounded-xl bg-[#141418] border border-white/10 text-white focus:outline-none focus:border-amber-400 text-sm transition-all"
+                class="w-full px-4 py-2.5 sm:py-3 rounded-xl bg-[#141418] border border-white/10 text-white focus:outline-none focus:border-amber-400 text-xs sm:text-sm transition-all"
               >
                 <option value="Бесплатное пробное занятие (Любая группа)">Бесплатное пробное занятие (Любая группа)</option>
-                <option value="Младшая группа: 5–7 лет">Младшая группа: 5–7 лет («Первые шаги на сцене»)</option>
-                <option value="Средняя студия: 8–12 лет">Средняя студия: 8–12 лет («Юный Артистократ»)</option>
-                <option value="Подростковая мастерская: 13–17 лет">Подростковая мастерская: 13–17 лет</option>
-                <option value="Взрослая труппа: 18+">Взрослая труппа: 18+ («Театр для себя и сцены»)</option>
-                <option value="Индивидуальные занятия с режиссером">Индивидуальные занятия & Подготовка в ВУЗ</option>
-                <option value="Спектакль: «Очень простая история»">Спектакль: «Очень простая история»</option>
+                <option value="Младшая группа: 5–6 лет">Младшая группа: 5–6 лет («Первые шаги на сцене»)</option>
+                <option value="Начальная группа: 7–8 лет">Начальная группа: 7–8 лет («Воображение и слово»)</option>
+                <option value="Средняя мастерская: 9–12 лет">Средняя мастерская: 9–12 лет («Актерское мастерство»)</option>
+                <option value="Подростковая труппа: 13–17 лет">Подростковая труппа: 13–17 лет («Характер и роль»)</option>
+                <option value="Взрослая труппа: 18+">Взрослая труппа: 18+ (наставник — Е.И. Сетьков)</option>
+                <option value="Индивидуальные занятия & ВУЗы">Индивидуальные занятия & Подготовка в ВУЗ</option>
+                <option value="Спектакль: «Очень простая история»">Спектакль: «Очень простая история» (реж. Е. Сетьков)</option>
+                <option value="Спектакль: «Мед, шарики и большие приключения»">Спектакль: «Мед, шарики и большие приключения» (реж. И. Захарова)</option>
                 <option value="Спектакль: «У ковчега в восемь»">Спектакль: «У ковчега в восемь»</option>
                 <option value="Спектакль: «Алиса в стране чудес»">Спектакль: «Алиса в стране чудес»</option>
               </select>
             </div>
 
-            <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-white/10">
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 pt-4 border-t border-white/10">
               <div class="text-xs text-zinc-400 text-center sm:text-left">
                 🎟️ Первый пробный урок проводится <span class="text-amber-300 font-semibold">бесплатно</span>
               </div>
@@ -605,7 +621,7 @@
             </div>
           </form>
 
-          <div class="mt-8 pt-4 border-t border-white/5 flex items-center justify-between text-[11px] text-zinc-500 font-mono">
+          <div class="mt-6 sm:mt-8 pt-4 border-t border-white/5 flex items-center justify-between text-[11px] text-zinc-500 font-mono">
             <span>CURTAIN CALL • KURSK STAGE</span>
             <span class="tracking-widest hidden sm:inline">||||| ||| ||||||| || ||||||||</span>
             <span>100% ARTISTIC FREEDOM</span>
@@ -617,15 +633,15 @@
   </section>
 
   <!-- ==================== 8. FAQ ==================== -->
-  <section id="faq" class="py-24 relative border-t border-white/5">
+  <section id="faq" class="py-12 sm:py-16 lg:py-24 relative border-t border-white/5">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="text-center max-w-xl mx-auto mb-16">
+      <div class="text-center max-w-xl mx-auto mb-8 sm:mb-16">
         <span class="badge-stage mb-3">Вопрос-ответ</span>
-        <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mb-3">
+        <h2 class="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold text-white mb-2 sm:mb-3">
           Часто задаваемые вопросы
         </h2>
-        <p class="text-zinc-400 text-sm">
+        <p class="text-zinc-400 text-xs sm:text-sm">
           Все, что нужно знать перед тем, как переступить порог нашей студии.
         </p>
       </div>
@@ -638,7 +654,7 @@
   </section>
 
   <!-- ==================== 9. КОНТАКТЫ И КАРТА ==================== -->
-  <section id="contacts" class="py-24 relative bg-[#09090b]/80 border-t border-white/5 pb-36">
+  <section id="contacts" class="py-12 sm:py-16 lg:py-24 relative bg-[#09090b]/80 border-t border-white/5 pb-28 sm:pb-36">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
@@ -872,8 +888,8 @@
   </div>
 
   <!-- Scripts -->
-  <script src="/js/gallery-data.js?v=1.1.0"></script>
-  <script src="/js/spotlight.js?v=1.1.0"></script>
-  <script src="/js/main.js?v=1.1.0"></script>
+  <script src="/js/gallery-data.js?v=1.1.1"></script>
+  <script src="/js/spotlight.js?v=1.1.1"></script>
+  <script src="/js/main.js?v=1.1.1"></script>
 </body>
 </html>

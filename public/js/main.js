@@ -46,7 +46,7 @@ function renderPlays(plays) {
   if (!container) return;
 
   container.innerHTML = plays.map(play => `
-    <div class="glass-panel rounded-2xl overflow-hidden group flex flex-col justify-between transition-all duration-300">
+    <div class="glass-panel rounded-2xl overflow-hidden group flex flex-col justify-between transition-all duration-300 w-[84vw] max-w-[340px] md:w-auto shrink-0 snap-center">
       <div class="relative aspect-[16/10] sm:aspect-[4/3] overflow-hidden">
         <img 
           src="${play.image}" 
@@ -100,105 +100,128 @@ function renderPlays(plays) {
 }
 
 /**
- * Рендеринг направлений и возрастных групп
+ * Рендеринг направлений студии (гармоничная матрица 3x2 из 6 карточек)
  */
-function renderCourses(courses) {
+function renderCourses(courses, activeCategory = 'all') {
   const container = document.getElementById('courses-grid');
-  const individualContainer = document.getElementById('individual-course-container');
   if (!container) return;
 
-  const regularCourses = courses.filter(c => c.id !== 'individual');
-  const individualCourse = courses.find(c => c.id === 'individual');
+  const filtered = activeCategory === 'all' 
+    ? courses 
+    : courses.filter(c => c.category === activeCategory);
 
-  // 4 возрастные группы в симметричной сетке 2x2 с равной высотой
-  container.innerHTML = regularCourses.map(c => `
-    <div class="glass-panel p-6 sm:p-8 rounded-2xl flex flex-col justify-between h-full transition-all duration-300 hover:border-amber-500/30">
-      <div>
-        <div class="flex items-center justify-between mb-4">
-          <span class="px-3 py-1 rounded-full text-xs font-semibold bg-amber-400/10 text-amber-300 border border-amber-400/20">
-            ${c.age}
-          </span>
-          <span class="text-xs text-zinc-400 font-medium">${c.schedule}</span>
-        </div>
+  container.innerHTML = filtered.map(c => {
+    const isIndividual = c.id === 'individual' || c.featured;
 
-        <h3 class="font-serif text-2xl sm:text-3xl text-white font-bold mb-3">
-          ${c.title}
-        </h3>
-        <p class="text-sm text-zinc-400 mb-6 leading-relaxed">
-          ${c.description}
-        </p>
-
-        <ul class="space-y-2.5 mb-8">
-          ${c.focus.map(item => `
-            <li class="text-xs sm:text-sm text-zinc-300 flex items-start gap-2.5">
-              <svg class="w-4 h-4 text-amber-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-              </svg>
-              <span>${item}</span>
-            </li>
-          `).join('')}
-        </ul>
-      </div>
-
-      <div class="pt-5 border-t border-white/5 flex items-center justify-between mt-auto">
-        <span class="text-xs text-amber-300/90 font-medium flex items-center gap-1.5">
-          <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
-          1-е занятие — Бесплатно
-        </span>
-        <button 
-          onclick="openTicketModal('Направление: ${c.title.split(':')[0]} (${c.age})')" 
-          class="px-4 py-2 text-xs font-semibold rounded-full bg-white/10 hover:bg-amber-400 hover:text-black transition-all duration-200"
-        >
-          Записаться в группу
-        </button>
-      </div>
-    </div>
-  `).join('');
-
-  // Полноразмерный мастер-баннер для индивидуальных занятий
-  if (individualContainer && individualCourse) {
-    individualContainer.innerHTML = `
-      <div class="glass-panel p-8 sm:p-10 rounded-3xl border-amber-500/25 relative overflow-hidden bg-gradient-to-br from-amber-500/[0.07] via-transparent to-transparent">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          <div class="lg:col-span-7">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-amber-400/10 text-amber-300 border border-amber-400/30 mb-4">
-              <span>★ Персональная траектория</span>
-              <span class="text-zinc-500">•</span>
-              <span>${individualCourse.age}</span>
+    if (isIndividual) {
+      return `
+        <div class="glass-panel p-6 sm:p-8 rounded-2xl flex flex-col justify-between h-full transition-all duration-300 border-amber-500/40 bg-gradient-to-br from-amber-500/[0.12] via-amber-950/[0.08] to-transparent relative overflow-hidden shadow-lg shadow-amber-500/5 hover:border-amber-400 w-[84vw] max-w-[320px] sm:w-auto shrink-0 snap-center">
+          <div class="absolute top-0 right-0 transform translate-x-6 -translate-y-6 w-24 h-24 bg-amber-400/10 rounded-full blur-2xl pointer-events-none"></div>
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-3 py-1 rounded-full text-xs font-semibold bg-amber-400/20 text-amber-300 border border-amber-400/40">
+                ★ Персонально
+              </span>
+              <span class="text-xs text-amber-200/90 font-medium">${c.schedule}</span>
             </div>
-            <h3 class="font-serif text-3xl sm:text-4xl font-bold text-white mb-3">
-              ${individualCourse.title}
+
+            <h3 class="font-serif text-2xl sm:text-3xl text-white font-bold mb-3 group-hover:text-amber-300 transition-colors">
+              ${c.title}
             </h3>
-            <p class="text-sm sm:text-base text-zinc-300 mb-6 leading-relaxed max-w-xl">
-              ${individualCourse.description}
+            <p class="text-sm text-zinc-300 mb-6 leading-relaxed">
+              ${c.description}
             </p>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
-              ${individualCourse.focus.map(item => `
-                <div class="flex items-center gap-2 text-xs sm:text-sm text-zinc-200">
-                  <span class="w-1.5 h-1.5 rounded-full bg-amber-400 shrink-0"></span>
+
+            <ul class="space-y-2.5 mb-8">
+              ${c.focus.map(item => `
+                <li class="text-xs sm:text-sm text-zinc-200 flex items-start gap-2.5">
+                  <svg class="w-4 h-4 text-amber-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
                   <span>${item}</span>
-                </div>
+                </li>
               `).join('')}
-            </div>
+            </ul>
           </div>
-          <div class="lg:col-span-5 flex flex-col justify-between items-start lg:items-end gap-6 bg-black/40 p-6 sm:p-8 rounded-2xl border border-white/5">
-            <div class="text-left lg:text-right">
-              <span class="text-xs text-amber-300 font-semibold uppercase tracking-wider block mb-1">С кем проходят занятия:</span>
-              <div class="text-base font-serif font-bold text-white">Педагоги и наставники студии</div>
-              <div class="text-xs text-zinc-400 mt-1">Наставник подбирается под цели ученика</div>
-            </div>
+
+          <div class="pt-5 border-t border-amber-500/20 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 mt-auto">
+            <span class="text-xs text-amber-300 font-medium flex items-center gap-1.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
+              Наставники студии
+            </span>
             <button 
               onclick="openTicketModal('Индивидуальные занятия с наставником')" 
-              class="btn-spotlight w-full sm:w-auto text-xs py-3.5 px-8"
+              class="btn-spotlight text-xs py-2.5 px-5 text-center"
             >
-              Записаться на консультацию
+              Консультация
             </button>
           </div>
         </div>
+      `;
+    }
+
+    return `
+      <div class="glass-panel p-6 sm:p-8 rounded-2xl flex flex-col justify-between h-full transition-all duration-300 hover:border-amber-500/30 w-[84vw] max-w-[320px] sm:w-auto shrink-0 snap-center">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="px-3 py-1 rounded-full text-xs font-semibold bg-amber-400/10 text-amber-300 border border-amber-400/20">
+              ${c.age}
+            </span>
+            <span class="text-xs text-zinc-400 font-medium">${c.schedule}</span>
+          </div>
+
+          <h3 class="font-serif text-2xl sm:text-3xl text-white font-bold mb-3">
+            ${c.title}
+          </h3>
+          <p class="text-sm text-zinc-400 mb-6 leading-relaxed">
+            ${c.description}
+          </p>
+
+          <ul class="space-y-2.5 mb-8">
+            ${c.focus.map(item => `
+              <li class="text-xs sm:text-sm text-zinc-300 flex items-start gap-2.5">
+                <svg class="w-4 h-4 text-amber-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>${item}</span>
+              </li>
+            `).join('')}
+          </ul>
+        </div>
+
+        <div class="pt-5 border-t border-white/5 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 mt-auto">
+          <span class="text-xs text-amber-300/90 font-medium flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+            1-е занятие — Бесплатно
+          </span>
+          <button 
+            onclick="openTicketModal('Направление: ${c.title.split(':')[0]} (${c.age})')" 
+            class="px-4 py-2 text-xs font-semibold rounded-full bg-white/10 hover:bg-amber-400 hover:text-black transition-all duration-200 text-center"
+          >
+            Записаться
+          </button>
+        </div>
       </div>
     `;
-  }
+  }).join('');
 }
+
+/**
+ * Фильтрация курсов по категориям
+ */
+window.filterCourses = function(category, buttonEl) {
+  document.querySelectorAll('.course-filter-btn').forEach(b => {
+    b.classList.remove('bg-amber-400', 'text-black', 'font-semibold');
+    b.classList.add('bg-white/5', 'text-zinc-400');
+  });
+
+  if (buttonEl) {
+    buttonEl.classList.remove('bg-white/5', 'text-zinc-400');
+    buttonEl.classList.add('bg-amber-400', 'text-black', 'font-semibold');
+  }
+
+  renderCourses(window.THEATER_DATA.courses, category);
+};
 
 /**
  * Рендеринг интерактивной фотогалереи в CSS Masonry
