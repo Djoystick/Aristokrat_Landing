@@ -50,8 +50,8 @@ if ($Bump -ne "none") {
     Write-Host "`n📦 [ШАГ 2/4] Используется текущая версия: $newVersion" -ForegroundColor Yellow
 }
 
-# ── ШАГ 3: Git Commit ──
-Write-Host "`n📝 [ШАГ 3/4] Создание Git коммита..." -ForegroundColor Yellow
+# ── ШАГ 3: Git Commit & Push (Vercel Trigger) ──
+Write-Host "`n📝 [ШАГ 3/4] Создание Git коммита и отправка в GitHub..." -ForegroundColor Yellow
 try {
     git add .
     $commitMsg = "release: v$newVersion - $Message"
@@ -59,6 +59,14 @@ try {
     Write-Host "   ✅ Коммит создан: '$commitMsg'" -ForegroundColor Green
 } catch {
     Write-Host "   ℹ️ Нет изменений для коммита или git уже чист." -ForegroundColor Gray
+}
+
+Write-Host "   🚀 Push в origin main (триггер автодеплоя Vercel)..." -ForegroundColor Yellow
+& git -c http.sslBackend=openssl push origin main
+if ($LASTEXITCODE -eq 0) {
+    Write-Host "   ✅ Ветка origin/main обновлена, автодеплой Vercel запущен!" -ForegroundColor Green
+} else {
+    Write-Host "   ⚠️ Ошибка при выполнении git push." -ForegroundColor Red
 }
 
 # ── ШАГ 4: Telegram Alert via Yandex VM Relay ──
