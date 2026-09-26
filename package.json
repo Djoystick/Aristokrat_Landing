@@ -1,13 +1,17 @@
 {
   "name": "artistokrat-theater",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "description": "Официальный сайт театральной студии «Артистократ» (Курск)",
   "main": "public/index.html",
   "scripts": {
     "dev": "node server.js",
     "start": "node server.js",
     "build": "node -e \"console.log('Build validation passed: static assets ready for Vercel/GitHub Pages'); process.exit(0);\"",
-    "test": "node test/validate-structure.js"
+    "test": "node test/validate-structure.js",
+    "test:harness": "node scripts/test-harness.js",
+    "visual:baseline": "node scripts/visual-regression.js baseline",
+    "visual:check": "node scripts/visual-regression.js check",
+    "release": "powershell -ExecutionPolicy Bypass -File scripts/release.ps1"
   },
   "keywords": [
     "theater",
@@ -18,5 +22,8 @@
     "spotlight"
   ],
   "author": "Artistokrat Theater Studio",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "puppeteer-core": "^25.12.0"
+  }
 }

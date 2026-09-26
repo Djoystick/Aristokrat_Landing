@@ -16,44 +16,47 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="/images/logo.png">
 
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            stage: {
-              950: '#09090b',
-              900: '#111217',
-              850: '#18181d',
-              800: '#202128'
-            },
-            gold: {
-              300: '#fef08a',
-              400: '#facc15',
-              500: '#f59e0b',
-              600: '#d97706'
-            },
-            velvet: {
-              900: '#450a0a',
-              800: '#7f1d1d'
-            }
-          },
-          fontFamily: {
-            serif: ['Cormorant Garamond', 'Georgia', 'serif'],
-            sans: ['Inter', 'system-ui', 'sans-serif'],
-            barcode: ['"Libre Barcode 39 Text"', 'cursive']
-          }
-        }
-      }
-    }
+  <!-- Preconnect & Fonts (Zero-CLS & High Performance) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=Libre+Barcode+39+Text&display=optional">
+
+  <!-- Schema.org Microdata -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "PerformingArtsTheater",
+    "name": "Театральная студия «Артистократ»",
+    "description": "Театральная студия со своей сценой в Курске. Обучение актерскому мастерству для детей от 5 лет, подростков и взрослых 18+. Постановка репертуарных спектаклей.",
+    "url": "https://artistokrat-theater.ru",
+    "telephone": ["+7-910-313-99-18", "+7-951-146-54-38"],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "ул. 50 лет Октября, 143А",
+      "addressLocality": "Курск",
+      "postalCode": "305040",
+      "addressCountry": "RU"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "51.7455",
+      "longitude": "36.1432"
+    },
+    "image": "https://artistokrat-theater.ru/images/logo.png",
+    "priceRange": "Бесплатное пробное занятие, абонементы от 2500 руб."
+  }
   </script>
 
+  <!-- Precompiled Tailwind CSS for Zero-CLS & Instant Paint -->
+  <link rel="stylesheet" href="/css/tailwind.generated.css?v=1.2.0">
+
   <!-- Custom Stylesheet -->
-  <link rel="stylesheet" href="/css/style.css?v=1.1.2">
+  <link rel="stylesheet" href="/css/style.css?v=1.2.0">
 </head>
 <body class="bg-[#09090b] text-[#fafafa] relative selection:bg-amber-500 selection:text-black">
+
+  <!-- Cinematic Film Grain Overlay (WWDC / WebTactics DPR-adaptive noise) -->
+  <div class="cinematic-grain" aria-hidden="true"></div>
 
   <!-- ==================== HEADER ==================== -->
   <header class="fixed top-0 left-0 right-0 z-50 bg-[#09090b]/80 backdrop-blur-xl border-b border-white/5 transition-all duration-300">
@@ -93,7 +96,7 @@
       <!-- Mobile Menu Trigger -->
       <button 
         onclick="openTicketModal()" 
-        class="sm:hidden px-3.5 py-2 rounded-full bg-amber-500/10 text-amber-300 border border-amber-500/30 text-xs font-semibold"
+        class="sm:hidden min-h-[44px] inline-flex items-center justify-center px-4 py-2.5 rounded-full bg-amber-500/10 text-amber-300 border border-amber-500/30 text-xs font-semibold"
       >
         Записаться
       </button>
@@ -144,19 +147,19 @@
       <!-- Trust Metrics (Balanced 4-Card Row) -->
       <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 text-left">
         <div class="glass-panel p-3.5 sm:p-5 rounded-xl sm:rounded-2xl flex flex-col justify-between">
-          <div class="font-serif text-2xl sm:text-4xl font-bold text-amber-300 mb-0.5 sm:mb-1">4 дня</div>
+          <div class="font-serif text-2xl sm:text-3xl font-bold text-amber-300 mb-0.5 sm:mb-1">4 дня</div>
           <div class="text-[11px] sm:text-xs text-zinc-400 font-medium leading-snug">Аншлагов подряд на премьере спектакля</div>
         </div>
         <div class="glass-panel p-3.5 sm:p-5 rounded-xl sm:rounded-2xl flex flex-col justify-between">
-          <div class="font-serif text-2xl sm:text-4xl font-bold text-amber-300 mb-0.5 sm:mb-1">100%</div>
+          <div class="font-serif text-2xl sm:text-3xl font-bold text-amber-300 mb-0.5 sm:mb-1">100%</div>
           <div class="text-[11px] sm:text-xs text-zinc-400 font-medium leading-snug">Учеников выходят на сцену в спектаклях</div>
         </div>
         <div class="glass-panel p-3.5 sm:p-5 rounded-xl sm:rounded-2xl flex flex-col justify-between">
-          <div class="font-serif text-2xl sm:text-4xl font-bold text-amber-300 mb-0.5 sm:mb-1">5+ лет</div>
+          <div class="font-serif text-2xl sm:text-3xl font-bold text-amber-300 mb-0.5 sm:mb-1">5+ лет</div>
           <div class="text-[11px] sm:text-xs text-zinc-400 font-medium leading-snug">Возраст для старта: от малышей до 18+</div>
         </div>
         <div class="glass-panel p-3.5 sm:p-5 rounded-xl sm:rounded-2xl flex flex-col justify-between">
-          <div class="font-serif text-2xl sm:text-4xl font-bold text-amber-300 mb-0.5 sm:mb-1">Своя сцена</div>
+          <div class="font-serif text-2xl sm:text-3xl font-bold text-amber-300 mb-0.5 sm:mb-1">Своя сцена</div>
           <div class="text-[11px] sm:text-xs text-zinc-400 font-medium leading-snug">С софитами, кулисами и зрительным залом</div>
         </div>
       </div>
@@ -249,7 +252,7 @@
           </div>
           <div class="relative z-10 flex flex-col sm:flex-row sm:items-center justify-between pt-4 border-t border-white/10 gap-2">
             <span class="text-[11px] sm:text-xs text-zinc-400">100% выпускников выходят на сцену</span>
-            <a href="#plays" class="text-xs font-semibold text-amber-300 hover:text-amber-200 flex items-center gap-1">
+            <a href="#plays" class="min-h-[44px] inline-flex items-center text-xs font-semibold text-amber-300 hover:text-amber-200 gap-1">
               Смотреть репертуар студии →
             </a>
           </div>
@@ -336,7 +339,7 @@
             <span class="text-xs text-zinc-400">Набор в группу 18+</span>
             <button 
               onclick="openTicketModal('Взрослая труппа (18+) — наставник Е.И. Сетьков')" 
-              class="px-4 py-2 text-xs font-semibold rounded-full bg-amber-400/10 text-amber-300 hover:bg-amber-400 hover:text-black border border-amber-400/30 transition-all duration-200"
+              class="min-h-[44px] inline-flex items-center justify-center px-4 py-2 text-xs font-semibold rounded-full bg-amber-400/10 text-amber-300 hover:bg-amber-400 hover:text-black border border-amber-400/30 transition-all duration-200"
             >
               Записаться к педагогу
             </button>
@@ -402,7 +405,7 @@
             <span class="text-xs text-zinc-400">Группы 5–6 и 7–8 лет</span>
             <button 
               onclick="openTicketModal('Детская студия — наставник И.В. Захарова')" 
-              class="px-4 py-2 text-xs font-semibold rounded-full bg-amber-400/10 text-amber-300 hover:bg-amber-400 hover:text-black border border-amber-400/30 transition-all duration-200"
+              class="min-h-[44px] inline-flex items-center justify-center px-4 py-2 text-xs font-semibold rounded-full bg-amber-400/10 text-amber-300 hover:bg-amber-400 hover:text-black border border-amber-400/30 transition-all duration-200"
             >
               Записаться к педагогу
             </button>
@@ -793,7 +796,7 @@
   </nav>
 
   <!-- ==================== TICKET MODAL ==================== -->
-  <div id="ticket-modal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-xl items-center justify-center p-4" style="display: none;">
+  <div id="ticket-modal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-xl flex items-center justify-center p-4">
     <div class="theater-ticket max-w-xl w-full p-6 sm:p-8 relative animate-in fade-in zoom-in duration-200">
       
       <!-- Close Button -->

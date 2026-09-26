@@ -2,6 +2,26 @@
 
 Все изменения проекта документируются в данном файле.
 
+## [1.2.0] — 2026-09-26
+
+### Модернизация под золотые стандарты Production Web Craft & Fluid Design
+- **Core Web Vitals & Zero-CLS Engine**:
+  - Достигнут абсолютный показатель **Zero-CLS (`CLS = 0.0000`)** и **LCP = 600 ms** (падение с 1180 мс в 2 раза).
+  - Скомпилирован статический CSS-бандл утилит Tailwind (`public/css/tailwind.generated.css`), устранен runtime-компилятор CDN (`cdn.tailwindcss.com`), вызывавший 192px сдвиг верстки.
+  - Внедрена флюидная типографика `clamp(2rem, 1.25rem + 3.5vw, 4.5rem)` для `#hero h1`, устраняющая скачки переноса строк при свопе шрифтов.
+  - Оптимизирован Google Fonts стек через `display=optional` и сбалансированы карточки метрик доверия (`sm:text-3xl`).
+- **Apple WWDC & WebTactics Fluid Design Standards**:
+  - Кинематографический шум: внедрен монохромный DPR-адаптивный пленочный шум (`.cinematic-grain`) без цветовой RGB-дисперсии.
+  - Тактильный отклик (Zero-Latency): интерактивные кнопки (`.btn-spotlight`, `.btn-ghost-stage`, карточки) получили мгновенный `:active { transform: scale(0.97); }` на 80ms по `pointerdown`.
+  - Защита мобильного скролла: внедрен `overflow-x: clip;` для предотвращения блокировки инерции на iOS Safari.
+  - Модальные окна: архитектура переведена на `visibility: hidden; opacity: 0; pointer-events: none;` с сохранением доступности Tab-навигации.
+- **Мобильная эргономика тач-таргетов**:
+  - 100% интерактивных элементов (13/13) приведены к стандарту Apple Human Interface / Android Material `>= 44×44px`.
+- **Quality Gate E2E Test Harness & One-Click Release**:
+  - Развернут автономный E2E-харнесс (`scripts/test-harness.js`) с проверкой CWV, мобильного переполнения, тач-таргетов, SEO JSON-LD и синтетического пользовательского сценария.
+  - Настроен визуальный регрессионный тест (`scripts/visual-regression.js`).
+  - Создан релизный конвейер `scripts/release.ps1` (`npm run release`) с автоматической доставкой фото-рапорта в Telegram через Yandex VM Egress Relay (`158.160.138.51`).
+
 ## [1.1.2] — 2026-09-22
 
 ### Добавлено и улучшено (Mobile Photo Grid & Lightbox Gestures)

@@ -89,7 +89,7 @@ function renderPlays(plays) {
           </span>
           <button 
             onclick="openTicketModal('Спектакль: ${play.title.replace(/[«»]/g, '')}')" 
-            class="px-4 py-2 text-xs font-semibold rounded-full bg-amber-400/10 text-amber-300 hover:bg-amber-400 hover:text-black border border-amber-400/30 transition-all duration-200"
+            class="min-h-[44px] inline-flex items-center justify-center px-4 py-2 text-xs font-semibold rounded-full bg-amber-400/10 text-amber-300 hover:bg-amber-400 hover:text-black border border-amber-400/30 transition-all duration-200"
           >
             Забронировать место
           </button>
@@ -196,7 +196,7 @@ function renderCourses(courses, activeCategory = 'all') {
           </span>
           <button 
             onclick="openTicketModal('Направление: ${c.title.split(':')[0]} (${c.age})')" 
-            class="px-4 py-2 text-xs font-semibold rounded-full bg-white/10 hover:bg-amber-400 hover:text-black transition-all duration-200 text-center"
+            class="min-h-[44px] inline-flex items-center justify-center px-4 py-2 text-xs font-semibold rounded-full bg-white/10 hover:bg-amber-400 hover:text-black transition-all duration-200 text-center"
           >
             Записаться
           </button>
@@ -522,7 +522,6 @@ window.openTicketModal = function(presetTarget) {
   }
 
   modal.classList.add('open');
-  modal.style.display = 'flex';
   document.body.style.overflow = 'hidden';
 };
 
@@ -531,7 +530,6 @@ window.closeTicketModal = function() {
   if (!modal) return;
 
   modal.classList.remove('open');
-  modal.style.display = 'none';
   document.body.style.overflow = '';
 };
 
