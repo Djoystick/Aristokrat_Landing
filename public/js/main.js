@@ -64,26 +64,33 @@ function renderPlays(plays) {
         </div>
       </div>
 
-      <div class="p-6 flex-1 flex flex-col justify-between">
+      <div class="p-5 sm:p-6 flex-1 flex flex-col justify-between">
         <div>
-          <div class="flex items-center justify-between text-xs text-amber-400/90 font-semibold mb-1">
-            <span class="uppercase tracking-wider">${play.genre}</span>
-            <span class="text-zinc-400 font-normal">${play.author}</span>
+          <div class="mb-2">
+            <span class="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-amber-400/90 block mb-1">
+              ${play.genre}
+            </span>
+            <h3 class="font-serif text-xl sm:text-2xl text-white font-bold group-hover:text-amber-300 transition-colors leading-snug">
+              ${play.title}
+            </h3>
           </div>
-          <h3 class="font-serif text-2xl sm:text-3xl text-white font-bold mb-1.5 group-hover:text-amber-300 transition-colors">
-            ${play.title}
-          </h3>
-          <div class="text-xs text-amber-300/90 font-medium mb-3 flex items-center gap-1.5">
-            <span class="w-1.5 h-1.5 rounded-full bg-amber-400 shrink-0"></span>
-            <span>Режиссер: ${play.director}</span>
+          <div class="text-xs text-zinc-400 mb-3 space-y-1">
+            <div class="flex items-center gap-1.5">
+              <span class="text-zinc-500">Автор:</span>
+              <span class="text-zinc-300 font-medium">${play.author}</span>
+            </div>
+            <div class="text-amber-300/90 font-medium flex items-center gap-1.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-amber-400 shrink-0"></span>
+              <span>Режиссер: ${play.director}</span>
+            </div>
           </div>
           <p class="text-sm text-zinc-400 leading-relaxed mb-6 font-normal">
             ${play.description}
           </p>
         </div>
 
-        <div class="pt-4 border-t border-white/5 flex items-center justify-between">
-          <span class="text-xs text-zinc-400 flex items-center gap-1.5">
+        <div class="pt-4 border-t border-white/5 flex items-center justify-between gap-2">
+          <span class="text-xs text-zinc-400 flex items-center gap-1.5 shrink-0">
             <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
             ${play.status}
           </span>
@@ -91,7 +98,7 @@ function renderPlays(plays) {
             onclick="openTicketModal('Спектакль: ${play.title.replace(/[«»]/g, '')}')" 
             class="min-h-[44px] inline-flex items-center justify-center px-4 py-2 text-xs font-semibold rounded-full bg-amber-400/10 text-amber-300 hover:bg-amber-400 hover:text-black border border-amber-400/30 transition-all duration-200"
           >
-            Забронировать место
+            Билеты в зал
           </button>
         </div>
       </div>
@@ -118,16 +125,21 @@ function renderCourses(courses, activeCategory = 'all') {
         <div class="glass-panel p-6 sm:p-8 rounded-2xl flex flex-col justify-between h-full transition-all duration-300 border-amber-500/40 bg-gradient-to-br from-amber-500/[0.12] via-amber-950/[0.08] to-transparent relative overflow-hidden shadow-lg shadow-amber-500/5 hover:border-amber-400 w-[84vw] max-w-[320px] sm:w-auto shrink-0 snap-center">
           <div class="absolute top-0 right-0 transform translate-x-6 -translate-y-6 w-24 h-24 bg-amber-400/10 rounded-full blur-2xl pointer-events-none"></div>
           <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="px-3 py-1 rounded-full text-xs font-semibold bg-amber-400/20 text-amber-300 border border-amber-400/40">
-                ★ Персонально
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-amber-400/20 text-amber-300 border border-amber-400/40">
+                ★ ${c.age}
               </span>
               <span class="text-xs text-amber-200/90 font-medium">${c.schedule}</span>
             </div>
 
-            <h3 class="font-serif text-2xl sm:text-3xl text-white font-bold mb-3 group-hover:text-amber-300 transition-colors">
-              ${c.title}
-            </h3>
+            <div class="mb-3">
+              <span class="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-amber-400/90 block mb-1">
+                ${c.groupName || 'Индивидуально'}
+              </span>
+              <h3 class="font-serif text-xl sm:text-2xl text-white font-bold leading-snug">
+                ${c.title}
+              </h3>
+            </div>
             <p class="text-sm text-zinc-300 mb-6 leading-relaxed">
               ${c.description}
             </p>
@@ -163,16 +175,28 @@ function renderCourses(courses, activeCategory = 'all') {
     return `
       <div class="glass-panel p-6 sm:p-8 rounded-2xl flex flex-col justify-between h-full transition-all duration-300 hover:border-amber-500/30 w-[84vw] max-w-[320px] sm:w-auto shrink-0 snap-center">
         <div>
-          <div class="flex items-center justify-between mb-4">
-            <span class="px-3 py-1 rounded-full text-xs font-semibold bg-amber-400/10 text-amber-300 border border-amber-400/20">
+          <div class="flex items-center justify-between mb-3">
+            <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-amber-400/10 text-amber-300 border border-amber-400/20">
               ${c.age}
             </span>
             <span class="text-xs text-zinc-400 font-medium">${c.schedule}</span>
           </div>
 
-          <h3 class="font-serif text-2xl sm:text-3xl text-white font-bold mb-3">
-            ${c.title}
-          </h3>
+          <div class="mb-3">
+            <span class="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-amber-400/90 block mb-1">
+              ${c.groupName || ''}
+            </span>
+            <h3 class="font-serif text-xl sm:text-2xl text-white font-bold leading-snug">
+              ${c.title}
+            </h3>
+            ${c.mentor ? `
+              <div class="text-xs text-amber-300/90 font-medium mt-1.5 flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-amber-400 shrink-0"></span>
+                <span>${c.mentor}</span>
+              </div>
+            ` : ''}
+          </div>
+
           <p class="text-sm text-zinc-400 mb-6 leading-relaxed">
             ${c.description}
           </p>
@@ -195,7 +219,7 @@ function renderCourses(courses, activeCategory = 'all') {
             1-е занятие — Бесплатно
           </span>
           <button 
-            onclick="openTicketModal('Направление: ${c.title.split(':')[0]} (${c.age})')" 
+            onclick="openTicketModal('Направление: ${c.groupName || c.title} (${c.age})')" 
             class="min-h-[44px] inline-flex items-center justify-center px-4 py-2 text-xs font-semibold rounded-full bg-white/10 hover:bg-amber-400 hover:text-black transition-all duration-200 text-center"
           >
             Записаться

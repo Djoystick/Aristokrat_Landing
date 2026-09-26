@@ -60,6 +60,10 @@ body {
   font-family: var(--font-barcode);
 }
 
+h1, h2, h3 {
+  text-wrap: balance;
+}
+
 /* Fluid Typography & Zero-CLS Layout Guarantee */
 #hero h1 {
   font-family: var(--font-serif);

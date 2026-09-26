@@ -1,6 +1,6 @@
 {
   "name": "artistokrat-theater",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Официальный сайт театральной студии «Артистократ» (Курск)",
   "main": "public/index.html",
   "scripts": {

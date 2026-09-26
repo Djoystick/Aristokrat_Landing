@@ -1,0 +1,9 @@
+🎭 <b>Релиз «Артистократ» (Театральная студия) v1.2.0 ВЫКАТЕН!</b>
+
+✨ <b>Quality Gate:</b> PASSED (LCP 600ms, Zero-CLS 0.0000)
+📐 <b>Fluid Design:</b> WWDC Zero-Latency :active (80ms), DPR Film Grain
+📱 <b>Mobile Sanity:</b> 13/13 Touch Targets (>=44px), 375px No-Overflow ✓
+⚡ <b>Zero-CLS Engine:</b> Precompiled Tailwind CSS, display:optional typography
+🎫 <b>Lead Booking Flow:</b> Ticket Modal & Synthetic Form OK ✓
+🏛️ <b>SEO & Schema.org:</b> PerformingArtsTheater JSON-LD Validated
+🕒 <b>Время:</b> 26.09.2026 14:55:31

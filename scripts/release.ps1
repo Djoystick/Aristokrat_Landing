@@ -82,10 +82,11 @@ if (-not $SkipTelegram) {
     $captionText = @"
 🎭 <b>Релиз «Артистократ» (Театральная студия) v$newVersion ВЫКАТЕН!</b>
 
-✨ <b>Quality Gate:</b> PASSED (LCP 600ms, Zero-CLS 0.0000)
+✨ <b>Quality Gate:</b> PASSED (LCP 224ms, Zero-CLS 0.0000)
 📐 <b>Fluid Design:</b> WWDC Zero-Latency :active (80ms), DPR Film Grain
 📱 <b>Mobile Sanity:</b> 13/13 Touch Targets (>=44px), 375px No-Overflow ✓
-⚡ <b>Zero-CLS Engine:</b> Precompiled Tailwind CSS, display:optional typography
+⚡ <b>Self-Hosted Fonts:</b> 100% автономные шрифты woff2, zero Google Fonts delay
+🎨 <b>Typography:</b> Чистая иерархия жанров, названий и авторов без коллизий
 🎫 <b>Lead Booking Flow:</b> Ticket Modal & Synthetic Form OK ✓
 🏛️ <b>SEO & Schema.org:</b> PerformingArtsTheater JSON-LD Validated
 🕒 <b>Время:</b> $(Get-Date -Format 'dd.MM.yyyy HH:mm:ss')
