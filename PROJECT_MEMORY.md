@@ -117,6 +117,7 @@
 ## 7. Реестр резервных копий (Backups)
 
 Все контрольные точки сохранены в виде ZIP-архивов и локальных `.bak` копий:
+- `backup_v1.2.0_quality_gate_fluid.zip` (98.0 MB) — эталонное состояние после модернизации Quality Gate, Zero-CLS 0.0000, Fluid Design и precompiled Tailwind.
 - `backup_v1.1.2_mobile_thumbnails.zip` (45.4 MB) — эталонное состояние на момент внедрения мобильных миниатюр и свайпов в Lightbox.
 - `backup_v1.1.1_mobile_ux.zip` (45.4 MB) — состояние после рефакторинга мобильных отступов и свайп-каруселей.
 - `H:\Work\Artistokrat_Theater_backup_v1.0.2.zip` (36.3 MB) — состояние после фикса Vercel роутинга.
